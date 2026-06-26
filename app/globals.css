@@ -86,6 +86,11 @@ body {
   animation-delay: 4.5s;
 }
 
+@keyframes marquee {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
 @keyframes home-grid-streak-burst-h {
   0%,
   4%,

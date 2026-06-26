@@ -57,7 +57,7 @@ export function HomeSectionEasyAPI() {
     >
       <Container className="py-12 sm:py-14 lg:py-16">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-14 xl:gap-20">
-          <div className="relative flex min-h-[280px] items-start justify-center pt-12 pb-8 sm:min-h-[360px] sm:pt-14 sm:pb-10 lg:pt-16 lg:pb-10">
+          <div className="relative flex min-h-[280px] items-start justify-center pt-12 pb-8 sm:min-h-[360px] sm:pt-14 sm:pb-10 lg:pt-[260px] lg:pb-10">
             <div className="relative aspect-[850/869] w-full max-w-xl">
               <AnimatePresence mode="wait">
                 <motion.div

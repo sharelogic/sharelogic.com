@@ -19,6 +19,10 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+  },
   openGraph: {
     title: `${siteConfig.name} — Smarter ServiceNow Integrations`,
     description: siteConfig.description,

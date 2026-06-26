@@ -119,7 +119,7 @@ export function HomeSectionUnifi() {
             </MotionLink>
           </div>
 
-          <div className="relative flex min-h-[280px] items-start justify-center rounded-[2rem] px-6 pt-12 pb-8 sm:min-h-[360px] sm:pt-14 sm:pb-10 lg:px-8 lg:pt-16 lg:pb-10">
+          <div className="relative flex min-h-[280px] items-start justify-center rounded-[2rem] px-6 pt-12 pb-8 sm:min-h-[360px] sm:pt-14 sm:pb-10 lg:px-8 lg:pt-[260px] lg:pb-10">
             <div className="relative aspect-[939/952] w-full max-w-lg">
               <AnimatePresence mode="wait">
                 <motion.div
