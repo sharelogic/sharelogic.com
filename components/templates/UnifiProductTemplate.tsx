@@ -127,13 +127,7 @@ export function UnifiProductTemplate({ product }: Props) {
                         <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" fill="currentColor" stroke="none"/>
                       </svg>
                     )},
-                    { label: "Pricing", href: "#pricing", icon: (
-                      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth={2}>
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 6v12M9 9.5c0-1.1.9-2 2-2h2a2 2 0 0 1 0 4h-2a2 2 0 0 0 0 4h2a2 2 0 0 0 2-2" strokeLinecap="round"/>
-                      </svg>
-                    )},
-                    { label: "Support", href: "#faqs", icon: (
+                    { label: "FAQs", href: "#faqs", icon: (
                       <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth={2}>
                         <circle cx="12" cy="12" r="10"/>
                         <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" strokeLinecap="round"/>
@@ -161,7 +155,7 @@ export function UnifiProductTemplate({ product }: Props) {
 
             {/* Right: hero illustration */}
             <FadeUp delay={0.1} className="hidden lg:flex lg:items-center lg:justify-center">
-              <div className="relative h-[480px] w-full max-w-[560px]" aria-hidden>
+              <div className="relative h-[624px] w-full max-w-[728px]" aria-hidden>
                 <Image
                   src="/unifi/background-ui.svg"
                   alt=""
@@ -221,12 +215,9 @@ export function UnifiProductTemplate({ product }: Props) {
               <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent" />
               <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent" />
 
-              <div
-                className="flex items-center"
-                style={{ animation: "marquee 30s linear infinite", willChange: "transform" }}
-              >
-                {[1, 2].map((copy) => (
-                  <div key={copy} className="flex shrink-0 items-center gap-14 pr-14">
+              <div className="flex w-max" style={{ animation: "marquee 30s linear infinite", willChange: "transform" }}>
+                {[0, 1].map((copy) => (
+                  <div key={copy} className="flex shrink-0 items-center gap-14 px-7">
                     {[
                       { src: "/logos/BT.png", alt: "BT" },
                       { src: "/logos/CDW.png", alt: "CDW" },
@@ -287,7 +278,7 @@ export function UnifiProductTemplate({ product }: Props) {
               Connect ServiceNow to Anything
             </h2>
           </ScrollReveal>
-          <div className="grid gap-10 sm:grid-cols-2">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {CAPABILITY_CARDS.map(({ icon, title, description, tagline }, i) => (
               <ScrollReveal key={title} direction="up" delay={i * 0.08} className="flex flex-col">
                 <span
@@ -424,33 +415,59 @@ export function UnifiProductTemplate({ product }: Props) {
 
       {/* ── How it Works + Governance — blue feature list container ── */}
       {(() => {
-        function FeatureList({ items }: { items: string[] }) {
+        const LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+        function AccordionRow({ label, body }: { label: string; body: string }) {
+          const [open, setOpen] = useState(false);
           return (
-            <ul className="mt-8 space-y-0">
-              {items.map((item) => (
-                <li key={item} className="flex items-center gap-3 border-t border-white/15 py-3 text-sm font-medium text-white/80">
-                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/10">
-                    <svg viewBox="0 0 12 12" fill="none" className="h-3 w-3" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="2,6 5,9 10,3" />
-                    </svg>
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className="border-t border-white/20 last:border-b last:border-white/20">
+              <button
+                onClick={() => setOpen((o) => !o)}
+                className="flex w-full items-center justify-between gap-4 py-4 text-left"
+                aria-expanded={open}
+              >
+                <span className="text-base font-medium text-white">{label}</span>
+                <motion.span
+                  animate={{ rotate: open ? 45 : 0 }}
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
+                  className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/40 text-white"
+                  aria-hidden
+                >
+                  <svg viewBox="0 0 16 16" fill="none" className="h-3 w-3" stroke="currentColor" strokeWidth={2}>
+                    <line x1="8" y1="2" x2="8" y2="14" />
+                    <line x1="2" y1="8" x2="14" y2="8" />
+                  </svg>
+                </motion.span>
+              </button>
+              <AnimatePresence initial={false}>
+                {open && (
+                  <motion.div
+                    key="body"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.28, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <p className="pb-5 text-sm leading-relaxed text-white/75">{body}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           );
         }
 
         return (
           <section id="how-it-works" className="border-b border-slate-200 bg-white py-16 sm:py-20 lg:py-24">
-            <Container>
+            <div className="px-4 sm:px-6">
               <div
-                className="overflow-hidden p-8 sm:p-12 lg:p-16"
+                className="overflow-hidden px-8 py-12 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
                 style={{
                   backgroundColor: HERO_NAVY,
                   borderRadius: "4rem 0 4rem 0",
                 }}
               >
+                <div className="mx-auto max-w-[1350px]">
                 {/* Block 1: image left, feature list right */}
                 <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
                   <ScrollReveal direction="right">
@@ -469,14 +486,14 @@ export function UnifiProductTemplate({ product }: Props) {
                     <h2 className={cn(sectionHeadingH2, "text-white")}>
                       Build better integrations with Integration Designer
                     </h2>
-                    <FeatureList items={[
-                      "Integrations",
-                      "Messages and Fields",
-                      "Pollers",
-                      "Datasets",
-                      "Multi-system integration",
-                      "Pro-code Power at Enterprise Scale",
-                    ]} />
+                    <div className="mt-8">
+                      <AccordionRow label="Integrations" body={LOREM} />
+                      <AccordionRow label="Messages and Fields" body={LOREM} />
+                      <AccordionRow label="Pollers" body={LOREM} />
+                      <AccordionRow label="Datasets" body={LOREM} />
+                      <AccordionRow label="Multi-system integration" body={LOREM} />
+                      <AccordionRow label="Pro-code Power at Enterprise Scale" body={LOREM} />
+                    </div>
                   </ScrollReveal>
                 </div>
 
@@ -489,14 +506,14 @@ export function UnifiProductTemplate({ product }: Props) {
                     <h2 className={cn(sectionHeadingH2, "text-white")}>
                       Guaranteed delivery for business critical flows.
                     </h2>
-                    <FeatureList items={[
-                      "Real-time monitoring",
-                      "Operational visibility",
-                      "Disaster recovery",
-                      "Governance embedded by design",
-                      "Native ServiceNow Security",
-                      "Long-Term Stability",
-                    ]} />
+                    <div className="mt-8">
+                      <AccordionRow label="Real-time monitoring" body={LOREM} />
+                      <AccordionRow label="Operational visibility" body={LOREM} />
+                      <AccordionRow label="Disaster recovery" body={LOREM} />
+                      <AccordionRow label="Governance embedded by design" body={LOREM} />
+                      <AccordionRow label="Native ServiceNow Security" body={LOREM} />
+                      <AccordionRow label="Long-Term Stability" body={LOREM} />
+                    </div>
                   </ScrollReveal>
                   <ScrollReveal direction="left" delay={0.1}>
                     <div className="overflow-hidden rounded-2xl bg-[#0d1524] shadow-lg">
@@ -531,60 +548,50 @@ export function UnifiProductTemplate({ product }: Props) {
                     <h2 className={cn(sectionHeadingH2, "text-white")}>
                       Never fear an upgrade again.
                     </h2>
-                    <FeatureList items={[
-                      "Upgrade & Change Confidence",
-                      "Create tests from real data with one click",
-                      "Dedicated Test Assistant portal",
-                      "Full internal end-to-end testing",
-                    ]} />
+                    <div className="mt-8">
+                      <AccordionRow label="Upgrade & Change Confidence" body={LOREM} />
+                      <AccordionRow label="Create tests from real data with one click" body={LOREM} />
+                      <AccordionRow label="Dedicated Test Assistant portal" body={LOREM} />
+                      <AccordionRow label="Full internal end-to-end testing" body={LOREM} />
+                    </div>
                   </ScrollReveal>
                 </div>
+                </div>
               </div>
-            </Container>
+            </div>
           </section>
         );
       })()}
 
-      {/* ── Where Unifi is the right choice ── */}
+      {/* ── More you can do with Unifi ── */}
       <section className="border-b border-slate-100 bg-[#F0F2F8]">
         <Container className="py-16 sm:py-20 lg:py-24">
           <ScrollReveal direction="up" className="mx-auto max-w-2xl text-center mb-14">
             <h2 className={cn(sectionHeadingH2, "text-slate-900")}>
-              Where Unifi is the right choice
+              More you can do with Unifi
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
-              Unifi is designed for organisations that treat integrations as truly business-critical and long-lived.
-            </p>
           </ScrollReveal>
 
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <ScrollReveal direction="right" className="flex flex-col gap-4 text-slate-600 text-base leading-relaxed">
-              <p>
-                Unifi shines in environments with customer-facing or revenue-impacting workflows, multiple
-                external systems and vendors, strict governance and audit requirements, and growing integration
-                portfolios where upgrades and changes carry real operational risk.
-              </p>
-              <p>
-                Unifi is built for teams that need structure and control as complexity increases.
-              </p>
-              <p>
-                For over a decade, Unifi has powered large, complex integration estates for enterprises and
-                MSPs. Mature, stable, and continuously refined in real-world conditions, it has become a
-                trusted integration backbone inside the ServiceNow ecosystem globally.
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal direction="left" delay={0.1}>
-              <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-xl">
-                <Image
-                  src="/unifi/ui-example.png"
-                  alt="Unifi integration designer interface example"
-                  width={1234}
-                  height={700}
-                  className="h-auto w-full object-cover object-center"
-                />
-              </div>
-            </ScrollReveal>
+          <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {[
+              { icon: "/unifi/icons/arrow-up-right.svg", title: "Response Actions" },
+              { icon: "/unifi/icons/refresh-ccw-04.svg", title: "Asynchronous Messaging" },
+              { icon: "/unifi/icons/code-02.svg", title: "Automated Documentation" },
+              { icon: "/unifi/icons/building-08.svg", title: "Templates" },
+              { icon: "/unifi/icons/refresh-ccw-04.svg", title: "Automatic Retries & Replays" },
+              { icon: "/unifi/icons/arrow-up-right.svg", title: "Multi-vendor / SIAM" },
+              { icon: "/unifi/icons/building-08.svg", title: "Queue Management" },
+            ].map(({ icon, title }, i) => (
+              <ScrollReveal key={title} direction="up" delay={i * 0.05}>
+                <div className="flex flex-col">
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-[#2750F5]">
+                    <Image src={icon} alt="" width={20} height={20} className="h-5 w-5 brightness-0 invert" />
+                  </div>
+                  <h3 className="text-base font-bold text-slate-900">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </Container>
       </section>

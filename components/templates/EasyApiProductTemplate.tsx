@@ -145,12 +145,6 @@ export function EasyApiProductTemplate(_props: Props) {
                         <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" fill="currentColor" stroke="none"/>
                       </svg>
                     )},
-                    { label: "Pricing", href: "#pricing", icon: (
-                      <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth={2}>
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 6v12M9 9.5c0-1.1.9-2 2-2h2a2 2 0 0 1 0 4h-2a2 2 0 0 0 0 4h2a2 2 0 0 0 2-2" strokeLinecap="round"/>
-                      </svg>
-                    )},
                     { label: "FAQs", href: "#faqs", icon: (
                       <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth={2}>
                         <circle cx="12" cy="12" r="10"/>
@@ -179,7 +173,7 @@ export function EasyApiProductTemplate(_props: Props) {
 
             {/* Right: hero illustration */}
             <FadeUp delay={0.1} className="hidden lg:flex lg:items-center lg:justify-center">
-              <div className="relative h-[480px] w-full max-w-[580px]" aria-hidden>
+              <div className="relative h-[624px] w-full max-w-[754px]" aria-hidden>
 
                 {/* Orange circular arrows — behind everything */}
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -275,12 +269,9 @@ export function EasyApiProductTemplate(_props: Props) {
               <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent" />
 
               {/* Two identical sets side-by-side; translate -50% = one full set = seamless */}
-              <div
-                className="flex items-center"
-                style={{ animation: "marquee 30s linear infinite", willChange: "transform" }}
-              >
-                {[1, 2].map((copy) => (
-                  <div key={copy} className="flex shrink-0 items-center gap-14 pr-14">
+              <div className="flex w-max" style={{ animation: "marquee 30s linear infinite", willChange: "transform" }}>
+                {[0, 1].map((copy) => (
+                  <div key={copy} className="flex shrink-0 items-center gap-14 px-7">
                     {[
                       { src: "/logos/BT.png", alt: "BT" },
                       { src: "/logos/CDW.png", alt: "CDW" },
@@ -524,15 +515,16 @@ export function EasyApiProductTemplate(_props: Props) {
 
         return (
           <section className="border-b border-slate-200 bg-white py-16 sm:py-20 lg:py-24">
-            <Container>
+            <div className="px-4 sm:px-6">
               {/* Blue rounded container — radius top-left & bottom-right only */}
               <div
-                className="overflow-hidden p-8 sm:p-12 lg:p-16"
+                className="overflow-hidden px-8 py-12 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
                 style={{
                   backgroundColor: HERO_NAVY,
                   borderRadius: "4rem 0 4rem 0",
                 }}
               >
+                <div className="mx-auto max-w-[1350px]">
                 {/* Block 1: image left, accordion right */}
                 <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
                   <ScrollReveal direction="right">
@@ -604,8 +596,9 @@ export function EasyApiProductTemplate(_props: Props) {
                     </div>
                   </ScrollReveal>
                 </div>
+                </div>
               </div>
-            </Container>
+            </div>
           </section>
         );
       })()}

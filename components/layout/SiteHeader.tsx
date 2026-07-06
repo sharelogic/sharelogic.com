@@ -81,7 +81,7 @@ export function SiteHeader() {
     <header
       className={cn("sticky top-0 z-50 border-b border-white/15 bg-[#2750F5]")}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-[1350px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex items-center gap-6">
           <Logo variant="onBrand" />
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">

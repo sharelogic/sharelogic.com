@@ -63,7 +63,7 @@ const BASE_DELAY_SEC = 0.04;
 export function HomeHeroArtboard() {
   return (
     <div
-      className="relative mx-auto w-full min-w-0 max-w-[min(100%,520px)] sm:max-w-[min(100%,580px)] lg:max-w-none"
+      className="relative mx-auto w-full min-w-0 max-w-[min(100%,520px)] sm:max-w-[min(100%,580px)] lg:max-w-none lg:scale-[0.85] lg:origin-center"
       aria-hidden
     >
       <div className="relative aspect-[786/728] w-full overflow-visible">

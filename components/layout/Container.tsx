@@ -9,7 +9,7 @@ type Props = {
 
 export function Container({ children, className, as: Tag = "div" }: Props) {
   return (
-    <Tag className={cn("mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8", className)}>
+    <Tag className={cn("mx-auto w-full max-w-[1350px] px-4 sm:px-6 lg:px-8", className)}>
       {children}
     </Tag>
   );
