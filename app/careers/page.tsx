@@ -51,27 +51,7 @@ export default function CareersPage() {
       <section className="border-t border-slate-200 bg-slate-50/60">
         <Container className="py-12 sm:py-14">
           <h2 className={cn(sectionHeadingH2, "text-slate-900")}>Open roles</h2>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-600">
-            These listings are mock data for the starter. Replace with your ATS links when ready.
-          </p>
-          <ul className="mt-8 divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white">
-            {openRoles.map((role) => (
-              <li key={role.id} className="flex flex-col gap-2 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
-                <div>
-                  <p className="text-base font-semibold text-slate-900">{role.title}</p>
-                  <p className="mt-1 text-sm text-slate-600">
-                    {role.department} · {role.location} · {role.type}
-                  </p>
-                </div>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50"
-                >
-                  Apply (placeholder)
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <p className="mt-4 text-sm leading-relaxed text-slate-600">No open positions at this time.</p>
         </Container>
       </section>
 

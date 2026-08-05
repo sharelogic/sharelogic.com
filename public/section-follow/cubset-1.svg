@@ -1,10 +1,5 @@
 <svg width="224" height="269" viewBox="0 0 224 269" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="112" cy="112" r="111.5" stroke="#2750F5" stroke-opacity="0.5" stroke-dasharray="4 4"/>
-<circle cx="112" cy="112" r="64.5" stroke="#2750F5" stroke-opacity="0.5" stroke-dasharray="4 4"/>
-<path d="M82.4863 153.882L70.8012 160.669L59.0396 153.882L70.7246 147.097L82.4863 153.882Z" fill="#EFEEFF" stroke="white" stroke-miterlimit="10"/>
-<path d="M82.4862 153.882L82.4468 167.666L70.7617 174.453L70.8011 160.669L82.4862 153.882Z" fill="#B5B5FF" stroke="white" stroke-miterlimit="10"/>
-<path d="M70.801 160.669L70.7616 174.453L59 167.666L59.0394 153.882L70.801 160.669Z" fill="#B5B5FF" stroke="white" stroke-miterlimit="10"/>
-<path d="M136.486 214.474L106.392 231.953L76.1016 214.474L106.195 197L136.486 214.474Z" fill="#EFEEFF" stroke="white" stroke-miterlimit="10"/>
-<path d="M136.486 214.474L136.385 249.973L106.291 267.453L106.392 231.953L136.486 214.474Z" fill="#B5B5FF" stroke="white" stroke-miterlimit="10"/>
-<path d="M106.392 231.953L106.291 267.453L76 249.973L76.1014 214.474L106.392 231.953Z" fill="#B5B5FF" stroke="white" stroke-miterlimit="10"/>
+  <rect x="112" y="-44" width="156" height="156" rx="8" transform="rotate(45 112 -44)" fill="#DDDEFF"/>
+  <rect x="46" y="190" width="88" height="88" rx="6" transform="rotate(45 46 190)" fill="#C8C9FF"/>
+  <rect x="180" y="210" width="52" height="52" rx="4" transform="rotate(45 180 210)" fill="#EEEEFF"/>
 </svg>

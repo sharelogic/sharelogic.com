@@ -19,7 +19,7 @@ type Props = {
 export function Hero({ title, subtitle, children, className, visual, showBackgroundDots = true }: Props) {
   const copy = (
     <>
-      <h1 className="text-balance text-4xl font-black tracking-tight text-white sm:text-5xl">
+      <h1 className="text-balance text-5xl font-black tracking-tight text-white sm:text-6xl">
         {title}
       </h1>
       {subtitle ? <p className="mt-4 text-xl text-pretty text-base leading-relaxed text-white">{subtitle}</p> : null}
@@ -75,7 +75,7 @@ export function Hero({ title, subtitle, children, className, visual, showBackgro
           </>
         ) : null}
       </div>
-      <Container className="relative z-10 w-full py-16 sm:py-20 lg:py-24 xl:py-28">
+      <Container className="relative z-10 w-full py-4">
         {visual ? (
           <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-10 xl:gap-12">
             <FadeUp className="w-full min-w-0 lg:w-[45%]">{copy}</FadeUp>

@@ -50,6 +50,7 @@ body {
 .grid-streak-overlay .grid-streak-node {
   inset: auto;
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 .grid-streak-overlay .grid-streak-node-h {

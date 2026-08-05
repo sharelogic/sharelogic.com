@@ -124,15 +124,6 @@ export function EasyApiProductTemplate(_props: Props) {
                 >
                   Start Free Trial
                 </MotionLink>
-                <MotionLink
-                  href="#features"
-                  whileHover={BUTTON_MOTION.whileHover}
-                  whileTap={BUTTON_MOTION.whileTap}
-                  transition={BUTTON_MOTION.transition}
-                  className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-transparent px-8 py-3 text-sm font-semibold text-slate-800 transition-colors hover:bg-slate-50"
-                >
-                  See How It Works
-                </MotionLink>
               </FadeUp>
 
               {/* Jump to nav */}
@@ -372,7 +363,7 @@ export function EasyApiProductTemplate(_props: Props) {
             />
             <blockquote className="text-lg font-medium leading-relaxed text-white sm:text-xl lg:text-2xl">
               ServiceNow is an incredibly secure platform and it makes extensive use of highly
-              configurable ACLs. The difficulty with these ACLs is the complexity across the
+              configurable ACLs. The difficulty with these ACLs it the complexity across the
               platform, and this is where Easy API comes in. Easy API removes this complexity
               with a highly configurable, simple integration manager.
             </blockquote>
@@ -609,10 +600,6 @@ export function EasyApiProductTemplate(_props: Props) {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left: copy */}
             <ScrollReveal direction="right" className="flex flex-col">
-              <p className="text-2xl font-bold text-slate-400 leading-snug">Built for scale</p>
-              <h2 className={cn(sectionHeadingH2, "text-slate-900 mt-0")}>
-                Built for scale
-              </h2>
               <p className="mt-6 text-base leading-relaxed text-slate-600">
                 What begins as a handful of integrations can quickly expand into dozens or hundreds
                 of systems interacting with the platform. Without a structured approach, managing
@@ -642,6 +629,40 @@ export function EasyApiProductTemplate(_props: Props) {
         </Container>
       </section>
 
+
+      {/* ── More you can do with Easy API ── */}
+      <section className="border-b border-slate-100 bg-[#F0F2F8]">
+        <Container className="py-16 sm:py-20 lg:py-24">
+          <ScrollReveal direction="up" className="mx-auto max-w-2xl text-center mb-14">
+            <h2 className={cn(sectionHeadingH2, "text-slate-900")}>
+              More you can do with Easy API
+            </h2>
+          </ScrollReveal>
+
+          <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {[
+              { icon: "/unifi/icons/arrow-up-right.svg", title: "API Versioning" },
+              { icon: "/unifi/icons/code-02.svg", title: "Auto-generated Docs" },
+              { icon: "/unifi/icons/refresh-ccw-04.svg", title: "Rate Limiting" },
+              { icon: "/unifi/icons/building-08.svg", title: "Connection Management" },
+              { icon: "/unifi/icons/arrow-up-right.svg", title: "Request Logging" },
+              { icon: "/unifi/icons/code-02.svg", title: "Schema Validation" },
+              { icon: "/unifi/icons/refresh-ccw-04.svg", title: "Role-based Access" },
+              { icon: "/unifi/icons/building-08.svg", title: "Multi-environment Support" },
+            ].map(({ icon, title }, i) => (
+              <ScrollReveal key={title} direction="up" delay={i * 0.05}>
+                <div className="flex flex-col">
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-[#2750F5]">
+                    <Image src={icon} alt="" width={20} height={20} className="h-5 w-5 brightness-0 invert" />
+                  </div>
+                  <h3 className="text-base font-bold text-slate-900">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       {/* ── FAQ ── */}
       {(() => {
@@ -786,7 +807,7 @@ export function EasyApiProductTemplate(_props: Props) {
                 transition={BUTTON_MOTION.transition}
                 className="inline-flex w-full min-w-[200px] items-center justify-center rounded-full border border-[#8ea2eb] bg-white px-8 py-3.5 text-sm font-semibold text-[#2750F5] shadow-sm transition-colors hover:bg-slate-50 sm:w-auto"
               >
-                See How It Works
+                Talk to a Specialist
               </MotionLink>
             </FadeUp>
           </div>

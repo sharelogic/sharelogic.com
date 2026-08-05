@@ -96,14 +96,14 @@ export function UnifiProductTemplate({ product }: Props) {
 
               <FadeUp delay={0.2} className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <MotionLink
-                  href="/contact"
+                  href="https://store.servicenow.com/store/app/998963221b246a50a85b16db234bcb51"
                   whileHover={BUTTON_MOTION.whileHover}
                   whileTap={BUTTON_MOTION.whileTap}
                   transition={BUTTON_MOTION.transition}
                   className="inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:opacity-90"
                   style={{ backgroundColor: HERO_NAVY }}
                 >
-                  Talk to a Specialist
+                  Start free trial
                 </MotionLink>
                 <MotionLink
                   href="#how-it-works"
@@ -259,11 +259,12 @@ export function UnifiProductTemplate({ product }: Props) {
           <ScrollReveal direction="up" delay={0.12} className="mx-auto mt-12 max-w-4xl">
             <div className="overflow-hidden rounded-2xl border border-slate-200/60 shadow-xl">
               <Image
-                src="/unifi/message-fields.svg"
+                src="/unifi/unifi-table.svg"
                 alt="Unifi message fields configuration"
                 width={1200}
                 height={700}
                 className="h-auto w-full object-cover object-top"
+                unoptimized
               />
             </div>
           </ScrollReveal>
@@ -689,7 +690,7 @@ export function UnifiProductTemplate({ product }: Props) {
         <div className="absolute inset-x-0 top-0 h-1 bg-[#2750F5]" aria-hidden />
 
         {/* Left decoration — z-0 so it sits behind the form */}
-        <div className="pointer-events-none absolute left-[10%] top-1/2 z-0 hidden -translate-y-1/2 md:block xl:left-[14%]" aria-hidden>
+        <div className="pointer-events-none absolute top-1/2 z-0 hidden -translate-y-1/2 xl:block" style={{ left: 'calc(50% - 384px - 40px - 256px)' }} aria-hidden>
           <div className="relative h-64 w-64">
             <div className="absolute inset-0 rounded-full border border-dashed border-[#cfd6ec]" />
             <div className="absolute inset-10 rounded-full border border-dashed border-[#cfd6ec]" />
@@ -698,7 +699,7 @@ export function UnifiProductTemplate({ product }: Props) {
           </div>
         </div>
         {/* Right decoration — z-0 so it sits behind the form */}
-        <div className="pointer-events-none absolute right-[10%] top-1/2 z-0 hidden -translate-y-1/2 md:block xl:right-[14%]" aria-hidden>
+        <div className="pointer-events-none absolute top-1/2 z-0 hidden -translate-y-1/2 xl:block" style={{ right: 'calc(50% - 384px - 40px - 256px)' }} aria-hidden>
           <div className="relative h-64 w-64">
             <div className="absolute inset-0 rounded-full border border-dashed border-[#cfd6ec]" />
             <div className="absolute inset-10 rounded-full border border-dashed border-[#cfd6ec]" />

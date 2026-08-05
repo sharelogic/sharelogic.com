@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { sectionHeadingH2 } from "@/lib/section-heading";
 import { cn } from "@/lib/utils/cn";
@@ -19,23 +18,23 @@ export function HomeSectionFollow() {
           backgroundSize: "36px 36px",
         }}
       />
-      <div className="pointer-events-none absolute left-4 top-16 opacity-75 sm:left-8 sm:top-14 sm:opacity-90 lg:left-16 lg:top-12">
-        <Image
-          src="/section-follow/cubset-1.svg"
-          alt=""
-          width={224}
-          height={269}
-          className="h-auto w-[min(140px,42vw)] max-w-none sm:w-[min(200px,40vw)]"
-        />
+      {/* Left decoration */}
+      <div className="pointer-events-none absolute top-1/2 z-0 hidden -translate-y-1/2 xl:block" style={{ left: 'calc(50% - 256px - 80px - 256px)' }} aria-hidden>
+        <div className="relative h-64 w-64">
+          <div className="absolute inset-0 rounded-full border border-dashed border-[#cfd6ec]" />
+          <div className="absolute inset-10 rounded-full border border-dashed border-[#cfd6ec]" />
+          <div className="absolute bottom-4 left-16 h-12 w-12 rotate-45 rounded-lg bg-[#c8c4f7]" />
+          <div className="absolute bottom-20 left-20 h-5 w-5 rotate-45 rounded bg-[#c8c4f7]" />
+        </div>
       </div>
-      <div className="pointer-events-none absolute right-4 top-[36%] opacity-75 sm:right-8 sm:top-[34%] sm:opacity-90 lg:right-16 lg:top-[32%]">
-        <Image
-          src="/section-follow/cubeset-2.svg"
-          alt=""
-          width={224}
-          height={243}
-          className="h-auto w-[min(130px,36vw)] max-w-none sm:w-[min(190px,38vw)]"
-        />
+      {/* Right decoration */}
+      <div className="pointer-events-none absolute top-1/2 z-0 hidden -translate-y-1/2 xl:block" style={{ right: 'calc(50% - 256px - 80px - 256px)' }} aria-hidden>
+        <div className="relative h-64 w-64">
+          <div className="absolute inset-0 rounded-full border border-dashed border-[#cfd6ec]" />
+          <div className="absolute inset-10 rounded-full border border-dashed border-[#cfd6ec]" />
+          <div className="absolute right-12 top-2 h-12 w-12 rotate-45 rounded-lg bg-[#c8c4f7]" />
+          <div className="absolute right-4 top-16 h-5 w-5 rotate-45 rounded bg-[#c8c4f7]" />
+        </div>
       </div>
 
       <Container className="relative z-10 py-8 sm:py-10 lg:py-12">
