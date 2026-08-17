@@ -6,12 +6,12 @@ export const mainNavigation: NavGroup[] = [
     id: "products",
     label: "Products",
     children: [
-      {
-        label: "Easy API",
-        href: "/products/easy-api",
-        description: "Composable API surfaces for governed integrations.",
-        icon: "/nav/nav-icon-easy-api.svg",
-      },
+      // {
+      //   label: "Easy API",
+      //   href: "/products/easy-api",
+      //   description: "Composable API surfaces for governed integrations.",
+      //   icon: "/nav/nav-icon-easy-api.svg",
+      // },
       {
         label: "Unifi",
         href: "/products/unifi",

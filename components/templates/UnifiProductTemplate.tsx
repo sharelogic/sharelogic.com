@@ -105,7 +105,7 @@ export function UnifiProductTemplate({ product }: Props) {
                 >
                   Start free trial
                 </MotionLink>
-                <MotionLink
+                {/* <MotionLink
                   href="#how-it-works"
                   whileHover={BUTTON_MOTION.whileHover}
                   whileTap={BUTTON_MOTION.whileTap}
@@ -114,11 +114,11 @@ export function UnifiProductTemplate({ product }: Props) {
                   style={{ color: HERO_NAVY }}
                 >
                   Architecture Overview
-                </MotionLink>
+                </MotionLink> */}
               </FadeUp>
 
               {/* Jump to nav */}
-              <FadeUp delay={0.26}>
+              {/* <FadeUp delay={0.26}>
                 <div className="mt-10 flex items-center gap-3 border-t border-slate-100 pt-8">
                   <span className="text-sm text-slate-500">Jump to:</span>
                   {[
@@ -150,7 +150,7 @@ export function UnifiProductTemplate({ product }: Props) {
                     </Link>
                   ))}
                 </div>
-              </FadeUp>
+              </FadeUp> */}
             </div>
 
             {/* Right: hero illustration */}
@@ -319,8 +319,10 @@ export function UnifiProductTemplate({ product }: Props) {
         ];
         const [active, setActive] = useState(0);
         return (
-          <section style={{ backgroundColor: HERO_NAVY }}>
-            <Container className="py-20 sm:py-24 lg:py-28">
+          // <section style={{ backgroundColor: HERO_NAVY }}>
+          //   <Container className="py-20 sm:py-24 lg:py-28">
+          <section>
+            <div className="mx-auto w-full max-w-[1350px] px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28" style={{ backgroundColor: HERO_NAVY, borderRadius: "4rem", }}>
               <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
                 <Image src="/quote.svg" alt="" width={48} height={48} className="mb-8 h-12 w-auto" aria-hidden />
 
@@ -359,7 +361,8 @@ export function UnifiProductTemplate({ product }: Props) {
                   ))}
                 </div>
               </div>
-            </Container>
+            </div>
+            {/* </Container> */}
           </section>
         );
       })()}
@@ -459,13 +462,13 @@ export function UnifiProductTemplate({ product }: Props) {
         }
 
         return (
-          <section id="how-it-works" className="border-b border-slate-200 bg-white py-16 sm:py-20 lg:py-24">
+          <section id="how-it-works" className="bg-white py-16 sm:py-20 lg:py-24">
             <div className="px-4 sm:px-6">
               <div
                 className="overflow-hidden px-8 py-12 sm:px-12 sm:py-16 lg:px-20 lg:py-20"
                 style={{
                   backgroundColor: HERO_NAVY,
-                  borderRadius: "4rem 0 4rem 0",
+                  borderRadius: "16rem 0 16rem 0",
                 }}
               >
                 <div className="mx-auto max-w-[1350px]">
@@ -565,7 +568,7 @@ export function UnifiProductTemplate({ product }: Props) {
       })()}
 
       {/* ── More you can do with Unifi ── */}
-      <section className="border-b border-slate-100 bg-[#F0F2F8]">
+      <section className="">
         <Container className="py-16 sm:py-20 lg:py-24">
           <ScrollReveal direction="up" className="mx-auto max-w-2xl text-center mb-14">
             <h2 className={cn(sectionHeadingH2, "text-slate-900")}>
@@ -575,21 +578,26 @@ export function UnifiProductTemplate({ product }: Props) {
 
           <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {[
-              { icon: "/unifi/icons/arrow-up-right.svg", title: "Response Actions" },
-              { icon: "/unifi/icons/refresh-ccw-04.svg", title: "Asynchronous Messaging" },
-              { icon: "/unifi/icons/code-02.svg", title: "Automated Documentation" },
-              { icon: "/unifi/icons/building-08.svg", title: "Templates" },
-              { icon: "/unifi/icons/refresh-ccw-04.svg", title: "Automatic Retries & Replays" },
-              { icon: "/unifi/icons/arrow-up-right.svg", title: "Multi-vendor / SIAM" },
-              { icon: "/unifi/icons/building-08.svg", title: "Queue Management" },
-            ].map(({ icon, title }, i) => (
+              { icon: "/unifi/icons/arrow-up-right.svg", title: "Certified Store Application", text: "following stringent ServiceNow vetting so security and compliance is assured" },
+              { icon: "/unifi/icons/arrow-up-right.svg", title: "Debugging and Support", text: "Detailed request tracking, contextual integration profiling and logging" },
+              { icon: "/unifi/icons/refresh-ccw-04.svg", title: "Asynchronous Messaging", text: "Delivery receipts for assurance data has been sent, received, and processed successfully"},
+              { icon: "/unifi/icons/code-02.svg", title: "Automated Documentation", text: "Available on demand and always up-to-date, saving time and effort" },
+              { icon: "/unifi/icons/building-08.svg", title: "Templates", text: "Rapidly configure integrations from predefined templates" },
+              { icon: "/unifi/icons/refresh-ccw-04.svg", title: "Automatic Retries & Replays", text: "Quickly recover from integration errors or mass outages"},
+              { icon: "/unifi/icons/arrow-up-right.svg", title: "Multi-vendor / SIAM", text: "eBond tickets with multiple systems at the same time"},
+              { icon: "/unifi/icons/building-08.svg", title: "Queue Management", text: "Maintain data integrity and order" },
+              { icon: "/unifi/icons/building-08.svg", title: "Attachment handling", text: "Fully configurable settings and automation make handling attachments a breeze" },
+              { icon: "/unifi/icons/building-08.svg", title: "Self-monitoring", text: "Automatically raise an incident or send alerts to resolve them quickly" },
+              { icon: "/unifi/icons/building-08.svg", title: "Real-time reporting", text: "Understand how your integrations are performing in real-time" },
+              { icon: "/unifi/icons/building-08.svg", title: "Custom tables and fields", text: "Integrate any table or field in ServiceNow" },
+            ].map(({ icon, title, text }, i) => (
               <ScrollReveal key={title} direction="up" delay={i * 0.05}>
                 <div className="flex flex-col">
                   <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-[#2750F5]">
                     <Image src={icon} alt="" width={20} height={20} className="h-5 w-5 brightness-0 invert" />
                   </div>
                   <h3 className="text-base font-bold text-slate-900">{title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{text}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -630,15 +638,15 @@ export function UnifiProductTemplate({ product }: Props) {
           const [open, setOpen] = useState(false);
           return (
             <div
-              className="cursor-pointer overflow-hidden rounded-2xl border border-white/30 px-6 py-5 transition-colors hover:border-white/50"
+              className="cursor-pointer overflow-hidden rounded-2xl border border-slate/30 px-6 py-5 transition-colors hover:border-slate/50"
               onClick={() => setOpen((o) => !o)}
             >
               <div className="flex items-center justify-between gap-4">
-                <span className="text-base font-medium text-white">{q}</span>
+                <span className="text-base font-medium text-slate">{q}</span>
                 <motion.span
                   animate={{ rotate: open ? 45 : 0 }}
                   transition={{ duration: 0.2, ease: "easeInOut" }}
-                  className="flex h-7 w-7 shrink-0 items-center justify-center text-white"
+                  className="flex h-7 w-7 shrink-0 items-center justify-center text-slate"
                   aria-hidden
                 >
                   <svg viewBox="0 0 16 16" fill="none" className="h-4 w-4" stroke="currentColor" strokeWidth={2}>
@@ -657,7 +665,7 @@ export function UnifiProductTemplate({ product }: Props) {
                     transition={{ duration: 0.28, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <p className="mt-4 text-sm leading-relaxed text-white/70">{a}</p>
+                    <p className="mt-4 text-sm leading-relaxed text-slate/70">{a}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -666,12 +674,12 @@ export function UnifiProductTemplate({ product }: Props) {
         }
 
         return (
-          <section id="faqs" style={{ backgroundColor: HERO_NAVY }} className="relative overflow-hidden">
+          <section id="faqs" className="relative overflow-hidden">
             <GridStreakOverlay />
             <Container className="relative z-10 py-16 sm:py-20 lg:py-24">
               <div className="grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-16">
                 <FadeUp className="flex items-start lg:items-center">
-                  <h2 className="text-3xl font-bold text-white sm:text-4xl">
+                  <h2 className="text-3xl font-bold text-slate sm:text-4xl">
                     Still have questions?
                   </h2>
                 </FadeUp>
@@ -687,7 +695,7 @@ export function UnifiProductTemplate({ product }: Props) {
       })()}
 
       <section className="relative overflow-hidden text-slate-900 py-20 sm:py-24 lg:py-28">
-        <div className="absolute inset-x-0 top-0 h-1 bg-[#2750F5]" aria-hidden />
+        {/* <div className="absolute inset-x-0 top-0 h-1 bg-[#2750F5]" aria-hidden /> */}
 
         {/* Left decoration — z-0 so it sits behind the form */}
         <div className="pointer-events-none absolute top-1/2 z-0 hidden -translate-y-1/2 xl:block" style={{ left: 'calc(50% - 384px - 40px - 256px)' }} aria-hidden>

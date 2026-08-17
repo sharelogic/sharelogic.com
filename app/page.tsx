@@ -53,7 +53,7 @@ Smart ones see them as critical to building trust and delivering exceptional cus
         items={[
           {
             title: "Strategic Governance",
-            description: "ServiceNow gives you many ways to build integrations. But without proper strategy, standards, and governance, things quickly become chaotic and hard to manage at scale.\n\nShareLogic delivers the strategy, standards, and governance framework you need to run integrations confidently and reliably — year after year.",
+            description: "ServiceNow gives you many ways to build integrations. But without proper strategy, standards, and governance, things quickly become chaotic and hard to manage at scale.\n\nShareLogic delivers the framework you need to run integrations confidently and reliably — year after year.",
             iconSrc: "/section-2/icon-incident.svg",
           },
           {
@@ -71,10 +71,10 @@ Smart ones see them as critical to building trust and delivering exceptional cus
 
       <section
         id="section-3"
-        className="relative overflow-hidden border-t border-slate-200 bg-[#2750F5]"
+        className="relative overflow-hidden"
         aria-labelledby="section-3-heading"
       >
-        <Container className="py-12 sm:py-14">
+        <Container className="py-12 sm:py-14 bg-[#2750F5]">
           <div className="relative z-10 flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
             <FadeUp className="flex min-w-0 shrink-0 justify-center lg:w-[46%] lg:justify-start">
               <div className="relative w-full max-w-[590px]">
@@ -103,7 +103,7 @@ Smart ones see them as critical to building trust and delivering exceptional cus
       </section>
       {/* <HomeSection6Products /> */}
       <HomeSectionUnifi />
-      <HomeSectionEasyAPI />
+      {/* <HomeSectionEasyAPI /> */}
       
       <TrustedBy />
       {/* <HomeSection7Documentation /> */}

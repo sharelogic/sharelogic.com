@@ -18,7 +18,7 @@ export default function ContactPage() {
     <>
       <Hero
         title="Talk with ShareLogic"
-        subtitle="Tell us about your environment, priorities, and timelines. We’ll connect you with the right team for a structured follow-up."
+        subtitle="Tell us about your integration challenges and we'll get you moving in the right direction."
       />
 
       <section className="border-t border-slate-200 bg-white">
@@ -26,8 +26,8 @@ export default function ContactPage() {
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-7">
               <h2 className={cn(sectionHeadingH2, "text-slate-900")}>Send a message</h2>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                Fields are validated on the client. Wire this form to your CRM, email pipeline, or ticketing system when you’re ready.
+              <p className="mt-2 leading-relaxed text-slate-600">
+                If you&apos;d like to find out more about what we do or arrange a demo, please get in touch.
               </p>
               <div className="mt-8">
                 <ContactForm />
@@ -63,7 +63,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="mt-6 grid gap-4">
+              {/* <div className="mt-6 grid gap-4">
                 <ContentCard
                   title="Security reviews"
                   description="Request security documentation, architecture summaries, and common questionnaire responses (placeholder)."
@@ -72,9 +72,9 @@ export default function ContactPage() {
                   title="Partners"
                   description="Technology providers and system integrators: ask about enablement, sandboxes, and certification paths (placeholder)."
                 />
-              </div>
+              </div> */}
 
-              <details className="mt-6 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+              {/* <details className="mt-6 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
                 <summary className="cursor-pointer text-sm font-semibold text-slate-900">
                   FAQ (placeholder)
                 </summary>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                     Timelines depend on scope, security requirements, and integration complexity.
                   </p>
                 </div>
-              </details>
+              </details> */}
             </aside>
           </div>
         </Container>
